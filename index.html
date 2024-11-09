@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SVG with Embedded Image</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Example</title>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 5798" width="1440" height="5798" fill="none">
-    <rect width="1440" height="5798" fill="#f2f2f2"></rect>
-    
-    <!-- Text Content -->
-    <g opacity="100%">
-      <text x="144" y="336.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Manufacture your</text>
-      <text x="144" y="398.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">clothing on a</text>
-      <text x="144" y="460.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Made-to-Order</text>
-      <text x="144" y="522.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">basis</text>
-    </g>
-    
-    <!-- Image Area -->
-    <g opacity="100%" filter="url(#filter_dshadow_0_0_0_00000014)">
-      <rect x="693" y="135" width="727" height="595" rx="0" fill="url(#image-pattern-9d38c8cf-bcf8-4974-a031-1ff56840483e)"></rect>
-    </g>
+    <h1>Inline SVG Example</h1>
 
-    <!-- Shadow Filter -->
-    <defs>
-      <filter id="filter_dshadow_0_0_0_00000014" x="0" y="0" width="100%" height="100%">
-        <feOffset dx="0" dy="10" result="offset"></feOffset>
-        <feGaussianBlur in="offset" stdDeviation="12" result="blur"></feGaussianBlur>
-        <feBlend in="SourceGraphic" in2="blur" mode="normal"></feBlend>
-      </filter>
+    <!-- Inline SVG -->      
 
-      <!-- Image Pattern -->
-      <pattern id="image-pattern-9d38c8cf-bcf8-4974-a031-1ff56840483e" patternContentUnits="objectBoundingBox" width="1" height="1">
-        <image xlink:href="image.jpeg" width="100%" height="100%" />
-      </pattern>
-    </defs>
-
-    <!-- Footer (for shadow line) -->
-    <g opacity="100%">
-      <rect x="0" y="5509" width="1440" height="289" fill="#ededed" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
-      <rect x="0" y="5509" width="1440" height="1" fill="#d9d9d9"></rect>
-    </g>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 900" width="100%" height="100%" fill="none">
+      <rect width="1440" height="900" fill="#f2f2f2"></rect>
+      <g opacity="100%">
+        <text x="527" y="442.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">
+          <tspan x="560">Recommended Tools For Clothing Design.</tspan>
+        </text>
+      </g>
+      <g opacity="100%" filter="url(#filter_dshadow_0_0_0_00000014)">
+        <rect x="430" y="489" width="167" height="150" rx="8" fill="url(#image-pattern-b9fd2f87-22ba-4a8e-a1a5-3463876c9d4e)"></rect>
+        <defs>
+          <pattern id="image-pattern-b9fd2f87-22ba-4a8e-a1a5-3463876c9d4e" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <image 
+              xlink:href="https://raw.githubusercontent.com/Spacemandomains/photos_hosting/main/Image.jpeg" 
+              width="900" 
+              height="900" 
+              transform="matrix(0.0011111111111111111 0 0 0.0012370370370370371 0 -0.056666666666666664)">
+            </image>
+          </pattern>
+        </defs>        
+      </g>
+      <defs>
+        <filter id="filter_dshadow_0_0_0_00000014" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+          <feFlood flood-opacity="0" result="bg-fix"></feFlood>
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="alpha"></feColorMatrix>
+          <feOffset dx="0" dy="0"></feOffset>
+          <feGaussianBlur stdDeviation="0"></feGaussianBlur>
+          <feComposite in2="alpha" operator="out"></feComposite>
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"></feColorMatrix>
+          <feBlend mode="normal" in2="bg-fix" result="bg-fix-filter_dshadow_0_0_0_00000014"></feBlend>
+          <feBlend in="SourceGraphic" in2="bg-fix-filter_dshadow_0_0_0_00000014" result="shape"></feBlend>
+        </filter>
+        <!-- Removed external font import -->
+      </defs>
+    </svg>
 </body>
 </html>
