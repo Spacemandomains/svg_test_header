@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG as Webpage</title>
     <style>
         /* CSS for responsive SVG */
+        @media (max-width: 768px) {
+    svg {
+        width: 100%; /* Ensures SVG scales to full container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
         body, html {
             margin: 0;
             padding: 0;
