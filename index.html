@@ -13,6 +13,26 @@
       overflow: hidden;
     }
 
+    /* For screens smaller than 600px (mobile devices) */
+    @media only screen and (max-width: 600px) {
+    body {
+    background-color: lightblue;
+    }
+    h1 {
+    font-size: 24px;
+    }
+    }
+
+    /* For screens larger than 900px (desktops) */
+    @media only screen and (min-width: 901px) {
+    body {
+    background-color: lightpink;
+    }
+    h1 {
+    font-size: 48px;
+    }
+    }
+
     /* Mobile-friendly scrollable container */
     .svg-container {
       height: 100vh; /* Full viewport height */
