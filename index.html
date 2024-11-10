@@ -10,28 +10,14 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
     }
 
     /* For screens smaller than 600px (mobile devices) */
-    @media only screen and (max-width: 600px) {
-    body {
-    background-color: lightblue;
-    }
-    h1 {
-    font-size: 24px;
-    }
-    }
-
-    /* For screens larger than 900px (desktops) */
-    @media only screen and (min-width: 901px) {
-    body {
-    background-color: lightpink;
-    }
-    h1 {
-    font-size: 48px;
-    }
-    }
+@media only screen and (max-width: 600px) {
+  #your-svg-id {
+    height: 100vh; /* Set the height to 100% of the viewport height */
+  }
+}
 
     /* Mobile-friendly scrollable container */
     .svg-container {
@@ -58,8 +44,8 @@
   <div class="svg-container">
     <!-- Place your SVG code here -->
     
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 5798" width="1440" height="5798" fill="none">
-  <rect width="1440" height="5798" fill="#f2f2f2"></rect>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 5798" width="1440" height="5798" fill="none">
+    <rect width="1440" height="5798" fill="#f2f2f2"></rect>
   <g opacity="100%">
     <text x="144" y="336.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Manufacture your</text>
     <text x="144" y="398.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">clothing on a</text>
@@ -743,8 +729,8 @@
 </style>
     <style id="brand"></style>
   </defs>
-</svg>
-    </svg>
     <!-- End of example SVG content -->
   </svg>
 </div>
+</body>
+</html>
