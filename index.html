@@ -1,61 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVG Example</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: lightgray;
-        }
-        svg {
-            width: 100%;
-            height: 100%;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SVG Scrollable Page</title>
+  <style>
+    /* Full viewport setup and basic reset */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Mobile-friendly scrollable container */
+    .svg-container {
+      height: 100vh; /* Full viewport height */
+      overflow-y: auto; /* Enable vertical scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Aligns SVG to top for natural scrolling */
+      background-color: lightgray;
+    }
+
+    /* SVG styling */
+    svg {
+      width: 100%;
+      height: auto; /* Responsive height */
+      max-width: 100%;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%" fill="none">
-        <!-- Text Content -->
-        <g opacity="100%">
-            <text x="144" y="336.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Manufacture your</text>
-            <text x="144" y="398.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">clothing on a</text>
-            <text x="144" y="460.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Made-to-Order</text>
-            <text x="144" y="522.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">basis</text>
-        </g>
-        
-        <!-- Image Area -->
-        <g opacity="100%" filter="url(#filter_dshadow_0_0_0_00000014)">
-            <rect x="693" y="135" width="727" height="595" rx="0" fill="url(#image-pattern-9d38c8cf-bcf8-4974-a031-1ff56840483e)"></rect>
-        </g>
-
-        <!-- Shadow Filter -->
-        <defs>
-            <filter id="filter_dshadow_0_0_0_00000014" x="0" y="0" width="100%" height="100%">
-                <feOffset dx="0" dy="10" result="offset"></feOffset>
-                <feGaussianBlur in="offset" stdDeviation="12" result="blur"></feGaussianBlur>
-                <feBlend in="SourceGraphic" in2="blur" mode="normal"></feBlend>
-            </filter>
-
-            <!-- Image Pattern -->
-            <pattern id="image-pattern-9d38c8cf-bcf8-4974-a031-1ff56840483e" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <image xlink:href="image.jpeg" width="100%" height="100%" />
-            </pattern>
-        </defs>
-
-        <!-- Footer (for shadow line) -->
-        <g opacity="100%">
-            <rect x="0" y="5509" width="1440" height="289" fill="#ededed" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
-            <rect x="0" y="5509" width="1440" height="1" fill="#d9d9d9"></rect>
-        </g>
+  <!-- Scrollable container -->
+  <div class="svg-container">
+    <!-- Place your SVG code here -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" width="100%" height="100%" fill="none">
+      <!-- Example SVG content - replace this with your own SVG elements -->
+  <rect width="1440" height="5798" fill="#f2f2f2"></rect>
+  <g opacity="100%">
+    <rect x="0" y="5509" width="1440" height="289" fill="#ededed" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+    <rect x="0" y="5509" width="1440" height="1" fill="#d9d9d9"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="144" y="336.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Manufacture your</text>
+    <text x="144" y="398.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">clothing on a</text>
+    <text x="144" y="460.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Made-to-Order</text>
+    <text x="144" y="522.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">basis</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="144" y="642" width="135" height="53" fill="#3164f4" rx="12"></rect>
+    <text x="184.5" y="674.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Pricing</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="144" y="585" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Manufacture with no minimal order quanity.</text>
+  </g>
+  <g opacity="100%">
+    <text x="526.5" y="806.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">
+      <tspan x="560">Recommended Tools For Clothing Design.</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="810" y="2051.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">After your customers</text>
+    <text x="810" y="2113.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">purchase</text>
+  </g>
+  <g opacity="100%">
+    <text x="810" y="2160" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">the design is sent to production for</text>
+    <text x="810" y="2186" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">custom sizing, manufacturing, and</text>
+    <text x="810" y="2212" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">the finished product is shipped</text>
+    <text x="810" y="2238" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">either to the designer or directly to</text>
+    <text x="810" y="2264" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">the customer, based on the</text>
+    <text x="810" y="2290" font-family="Inter" font-size="20" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">designer’s preferences.</text>
+  </g>
+  <g opacity="100%" mask="url(#mask_afue77ea1g)">
+    <text x="810" y="1983" font-family="Inter" font-size="18" fill="#7f7f7f" letter-spacing="2" font-weight="700" font-style="normal">HOW IT WORKS</text>
+    <defs>
+      <mask id="mask_afue77ea1g">
+        <rect x="810" y="1965" width="189" height="19" fill="white"></rect>
+      </mask>
+    </defs>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="810.5" y="2307.5" width="119" height="52" fill="rgba(49,100,244,0)" stroke="#030303" stroke-width="1" rx="12"></rect>
+    <text x="837.5" y="2339.5" font-family="Inter" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Try Now</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="595" y="0" width="1440" height="115" fill="#ededed" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="1141" y="63.5" font-family="Inter" font-size="16" fill="#3164f4" letter-spacing="-0.1" font-weight="600" font-style="normal">
+      <tspan x="1142">Pricing</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="1241" y="63.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">
+      <tspan x="1243">About us</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="1359" y="63.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">
+      <tspan x="1361">Contact</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="447" y="5605.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Carbon Credits</text>
+  </g>
+  <g opacity="100%">
+    <text x="449" y="5584.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Polo Shirts</text>
+  </g>
+  <g opacity="100%">
+    <text x="447" y="5645.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">FAQ</text>
+  </g>
+  <g opacity="100%">
+    <text x="449" y="5564.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Home</text>
+  </g>
+  <g opacity="100%">
+    <text x="662" y="5564.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Instagram</text>
+  </g>
+  <g opacity="100%">
+    <text x="661" y="5585.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Youtube</text>
+  </g>
+  <g opacity="100%">
+    <text x="664" y="5606.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Linkedin</text>
+  </g>
+  <g opacity="100%">
+    <text x="877" y="5585.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Terms Of Service</text>
+  </g>
+  <g opacity="100%">
+    <text x="877" y="5564.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Privacy Policy</text>
+  </g>
+  <g opacity="100%">
+    <text x="144" y="5666.5" font-family="Inter" font-size="16" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">2024 © The Winners Circle, Inc.</text>
+    <text x="144" y="5687.5" font-family="Inter" font-size="16" fill="#030303" letter-spacing="-0.1" font-weight="normal" font-style="normal">All rights reserved.</text>
+  </g>
+  <g opacity="100%">
+    <rect x="169" y="1189" width="1103" height="466" fill="#f2f2f2" rx="16" filter="url(#filter_dshadow_24_0_4_3333331a)"></rect>
+  </g>
+  <g opacity="100%">
+    <rect x="145" y="1158" width="1150" height="478" fill="#fff" rx="16" filter="url(#filter_dshadow_32_0_4_3333331a)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="214" y="1298.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Why isn&apos;t 3D clothing</text>
+    <text x="214" y="1360.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">manufactured?</text>
+  </g>
+  <g opacity="100%" mask="url(#mask_bhnpb1vr9)">
+    <text x="214" y="1408" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Founded by a group of passionate</text>
+    <text x="214" y="1434" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">entrepreneurs, The Winners Circle</text>
+    <text x="214" y="1460" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Made to Order SaaS has grown from a</text>
+    <text x="214" y="1486" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">small startup into a leading provider of</text>
+    <text x="214" y="1512" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">innovative solutions for clothing</text>
+    <text x="214" y="1538" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">brands.</text>
+    <defs>
+      <mask id="mask_bhnpb1vr9">
+        <rect x="214" y="1388" width="381" height="130" fill="white"></rect>
+      </mask>
+    </defs>
+  </g>
+  <g opacity="100%">
+    <text x="331" y="4294.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="564">Testimonials</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="450" y="4349" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">
+      <tspan x="456">The Winners Circle offers a made-to-order platform that</tspan>
+    </text>
+    <text x="450" y="4375" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">
+      <tspan x="502">allows designers to manuifacture 3D clothing.</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="549" y="4406" width="344" height="270" fill="#fff" rx="16" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="531" y="4455" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="573">As an emerging designer, I needed a</tspan>
+    </text>
+    <text x="531" y="4476" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="585">platform that could help me scale</tspan>
+    </text>
+    <text x="531" y="4497" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="594">without the huge upfront costs.</tspan>
+    </text>
+    <text x="531" y="4518" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="554">The Winners Circle provided exactly that.</tspan>
+    </text>
+  </g>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="660" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="687" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="714" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="741" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="768" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <g opacity="100%">
+    <text x="649" y="4601" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="692">Adele</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="155" y="4416" width="344" height="270" fill="#fff" rx="16" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="156" y="4455" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="186">&quot;The Winners Circle has completely</tspan>
+    </text>
+    <text x="156" y="4476" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="160">changed how I run my fashion brand. I no</tspan>
+    </text>
+    <text x="156" y="4497" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="166">longer have to worry about overstock or</tspan>
+    </text>
+    <text x="156" y="4518" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="299">waste.&quot;</tspan>
+    </text>
+  </g>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="266" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="293" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="320" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="347" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="374" y="4554" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <g opacity="100%">
+    <text x="255" y="4601" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="300">Jack</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="943" y="4416" width="344" height="270" fill="#fff" rx="16" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="989" y="4455" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="1004">The ability to offer custom-</tspan>
+    </text>
+    <text x="989" y="4476" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="1005">sized clothing to my clients</tspan>
+    </text>
+    <text x="989" y="4497" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="1018">without worrying about</tspan>
+    </text>
+    <text x="989" y="4518" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="997">production delays or wasted</tspan>
+    </text>
+    <text x="989" y="4539" font-family="Poppins" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="1025">materials is priceless.</tspan>
+    </text>
+  </g>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="1055" y="4557" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="1082" y="4557" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="1109" y="4557" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="1136" y="4557" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="17" height="17" fill="#3164f4" x="1163" y="4557" opacity="100%">
+    <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+  </svg>
+  <g opacity="100%">
+    <text x="1043" y="4600" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="1093">Ben</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="145" y="4878" width="1151" height="451" fill="#fff" rx="16" filter="url(#filter_dshadow_32_0_4_3333331a)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="222" y="5010.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Get started with The</text>
+    <text x="222" y="5072.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Winners Circle</text>
+    <text x="222" y="5134.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">today</text>
+  </g>
+  <g opacity="100%">
+    <text x="222" y="5127" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Buy zero stock. No minimum order quantity.</text>
+    <text x="222" y="5153" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Custom sizing.</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="221" y="5191" width="208" height="53" fill="#3164f4" rx="12"></rect>
+    <text x="269" y="5223.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Ask Questions</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="214" y="1538" width="159" height="53" fill="#3164f4" rx="12"></rect>
+    <text x="224" y="1570.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Start Manufacting</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="144" y="68.5" font-family="Poppins" font-size="28" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">The Winners Circle</text>
+  </g>
+  <g opacity="100%">
+    <text x="550" y="2566.5" font-family="Poppins" font-size="48" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan x="601">Pricing</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="479" y="2621" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">
+      <tspan x="497">Our pricing is not expensive, but it&apos;s not</tspan>
+    </text>
+    <text x="479" y="2647" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">
+      <tspan x="484">cheap either, it&apos;s exactly what it should be</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect x="109" y="2736" width="1152" height="402" fill="#fff" rx="16" filter="url(#filter_dshadow_0_0_0_00000014)"></rect>
+  </g>
+  <g opacity="100%">
+    <rect x="484" y="2707" width="403" height="460" fill="#fff" rx="16" filter="url(#filter_dshadow_32_0_4_3333331a)"></rect>
+  </g>
+  <g opacity="100%">
+    <text x="146" y="2794" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Basic</text>
+  </g>
+  <g opacity="100%">
+    <text x="521" y="2794" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Pro</text>
+  </g>
+  <g opacity="100%">
+    <text x="924" y="2794" font-family="Poppins" font-size="20" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Conference and Events</text>
+  </g>
+  <g opacity="100%">
+    <text x="170" y="2885.5" font-family="Poppins" font-size="72" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">250</text>
+  </g>
+  <g opacity="100%">
+    <text x="146" y="2856.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">$</text>
+  </g>
+  <g opacity="100%">
+    <text x="545" y="2885.5" font-family="Poppins" font-size="72" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">1000</text>
+  </g>
+  <g opacity="100%">
+    <text x="521" y="2856.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">$</text>
+  </g>
+  <g opacity="100%">
+    <text x="948" y="2885.5" font-family="Poppins" font-size="72" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">2500</text>
+  </g>
+  <g opacity="100%">
+    <text x="924" y="2856.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">$</text>
+  </g>
+  <g opacity="100%">
+    <text x="308" y="2883" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">/month</text>
+  </g>
+  <g opacity="100%">
+    <text x="716" y="2883" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Life Time</text>
+  </g>
+  <g opacity="100%">
+    <text x="1137" y="2883" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">/Annually</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="521" y="3047" width="329" height="53" fill="#3164f4" rx="12"></rect>
+    <text x="608" y="3079.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Get Started with Pro</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146.5" y="3047.5" width="300" height="52" fill="rgba(49,100,244,0)" stroke="#030303" stroke-width="1" rx="12"></rect>
+    <text x="211" y="3079.5" font-family="Inter" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Get Started with Basic</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924.5" y="3047.5" width="330" height="52" fill="rgba(49,100,244,0)" stroke="#030303" stroke-width="1" rx="12"></rect>
+    <text x="935" y="3079.5" font-family="Inter" font-size="16" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">
+      <tspan>Get Started with Conference and Events</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="521" y="2944" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">For startups and growing</text>
+    <text x="521" y="2970" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">businesses</text>
+  </g>
+  <g opacity="100%">
+    <text x="924" y="2944" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">For organizations with</text>
+    <text x="924" y="2970" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">advanced needs</text>
+  </g>
+  <g opacity="100%">
+    <text x="146" y="2944" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">For individuals and small</text>
+    <text x="146" y="2970" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">teams</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="719" y="2736" width="146" height="34" fill="#3164f4" rx="17"></rect>
+    <text x="746.5" y="2758.5" font-family="Inter" font-size="14" fill="#fff" letter-spacing="0" font-weight="700" font-style="normal">
+      <tspan>Most Popular</tspan>
+    </text>
+  </g>
+  <g opacity="100%">
+    <text x="146" y="3249.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Compare Features</text>
+  </g>
+  <g opacity="100%">
+    <text x="146" y="3351.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Basic</text>
+  </g>
+  <g opacity="100%">
+    <text x="540" y="3351.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Pro</text>
+  </g>
+  <g opacity="100%">
+    <text x="924" y="3351.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Conference and Events</text>
+  </g>
+  <g opacity="100%">
+    <rect x="146" y="3394" width="1078" height="2" fill="#d9d9d9" rx="1"></rect>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3433" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3443">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
     </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3457" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">No Minimum Order Quantity</text>
+    <text x="201" y="3483" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(MOQ) for Custom Apparel</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3493" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3503">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3517" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Design Upload (Limited to</text>
+    <text x="201" y="3543" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">a set number of designs)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3553" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3563">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3577" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">On-Demand, Made-to-Order</text>
+    <text x="201" y="3603" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Produced after order is placed)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3613" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3623">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3637" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Custom Sizing with</text>
+    <text x="201" y="3663" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Advanced Mobile-Fit Tool</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3673" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3683">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3697" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Order Tracking</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3733" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3743">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3757" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Shipping to Designer</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3433" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3443">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3457" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">No Minimum Order Quantity</text>
+    <text x="595" y="3483" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(MOQ) for Custom Apparel</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3493" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3503">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3517" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Unlimited Design</text>
+    <text x="595" y="3543" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Uploads</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3553" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3563">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3577" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">On-Demand, Made-to-Order</text>
+    <text x="595" y="3603" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Produced after order is placed)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3613" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3623">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3637" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Custom Sizing with</text>
+    <text x="595" y="3663" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Advanced Mobile-Fit Tool</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3673" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3683">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3697" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Order Tracking</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3733" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3743">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3753" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Shipping to Designer</text>
+    <text x="595" y="3779" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">or Customer</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3433" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3443">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3457" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">No Minimum Order Quantity</text>
+    <text x="979" y="3483" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(MOQ) for Custom Apparel</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3493" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3503">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3517" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">On-Demand, Made-to-Order Tees</text>
+    <text x="979" y="3543" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Produced after an order is</text>
+    <text x="979" y="3569" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">placed)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3553" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3563">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3577" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Custom Sizing with</text>
+    <text x="979" y="3603" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Advanced Mobile-Fit Tool</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3613" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3623">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3637" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Made-to-Order Pricing Passed to Customers</text>
+    <text x="979" y="3663" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(No impact on event’s ticket pricing)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3673" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3683">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3753" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Direct Shipping to Attendees’ Home</text>
+    <text x="979" y="3779" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Addresses</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3733" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3743">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3697" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Order Tracking</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3793" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3803">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3817" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Real-time Collaboration</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3853" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3863">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3993" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Marketing Boost Through Attendee</text>
+    <text x="979" y="4019" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Apparel (Worn during travel)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3909" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3919">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3933" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">White-Label Branding for Designers</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="924" y="3973" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="934.5" y="3983">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="979" y="3873" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Priority Customer Support</text>
+    <text x="979" y="3899" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Email and Live Chat)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3793" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3803">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3817" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Faster Production</text>
+    <text x="595" y="3843" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Turnaround</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3853" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3863">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3877" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Priority Customer Support</text>
+    <text x="595" y="3903" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Email and Live Chat)</text>
+  </g>
+  <g opacity="100%">
+    <text x="201" y="3817" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Customer Support</text>
+    <text x="201" y="3843" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Email only)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="146" y="3799" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="156.5" y="3809">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3933" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Virtual Try On App</text>
+    <text x="595" y="3959" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(Beta)</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3909" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3919">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="447" y="5625.5" font-family="Inter" font-size="16" fill="#262626" letter-spacing="-0.1" font-weight="600" font-style="normal">Clothing Repair</text>
+  </g>
+  <g opacity="100%">
+    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="540" y="3973" width="35" height="34" fill="#3164f4" rx="17"></rect>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14" height="14" fill="#fff" x="550.5" y="3983">
+      <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path>
+    </svg>
+  </g>
+  <g opacity="100%">
+    <text x="595" y="3993" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Responsible Textile</text>
+    <text x="595" y="4019" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Recovery Act Compliance</text>
+    <text x="595" y="4045" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(California Customers Only)</text>
+  </g>
+  <defs>
+    <filter id="filter_dshadow_0_0_0_00000014" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="bg-fix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="alpha"></feColorMatrix>
+      <feOffset dx="0" dy="0"></feOffset>
+      <feGaussianBlur stdDeviation="0"></feGaussianBlur>
+      <feComposite in2="alpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"></feColorMatrix>
+      <feBlend mode="normal" in2="bg-fix" result="bg-fix-filter_dshadow_0_0_0_00000014"></feBlend>
+      <feBlend in="SourceGraphic" in2="bg-fix-filter_dshadow_0_0_0_00000014" result="shape"></feBlend>
+    </filter>
+    <filter id="filter_dshadow_24_0_4_3333331a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="bg-fix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="alpha"></feColorMatrix>
+      <feOffset dx="0" dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="12"></feGaussianBlur>
+      <feComposite in2="alpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.1 0"></feColorMatrix>
+      <feBlend mode="normal" in2="bg-fix" result="bg-fix-filter_dshadow_24_0_4_3333331a"></feBlend>
+      <feBlend in="SourceGraphic" in2="bg-fix-filter_dshadow_24_0_4_3333331a" result="shape"></feBlend>
+    </filter>
+    <filter id="filter_dshadow_32_0_4_3333331a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="bg-fix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="alpha"></feColorMatrix>
+      <feOffset dx="0" dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="16"></feGaussianBlur>
+      <feComposite in2="alpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.1 0"></feColorMatrix>
+      <feBlend mode="normal" in2="bg-fix" result="bg-fix-filter_dshadow_32_0_4_3333331a"></feBlend>
+      <feBlend in="SourceGraphic" in2="bg-fix-filter_dshadow_32_0_4_3333331a" result="shape"></feBlend>
+    </filter>
+    <style id="google">@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&amp;display=swap);
+</style>
+    <style id="brand"></style>
+  </defs>
+</svg>
+      <!-- End of example SVG content -->
+    </svg>
+  </div>
 </body>
 </html>
