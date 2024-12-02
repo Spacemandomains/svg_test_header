@@ -52,14 +52,14 @@
         </pattern>
       </defs>
     </g>
-    <a href="#mostpopular" style="text-decoration: none;">
-    <g opacity="100%">
-        <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="144" y="642" width="135" height="53" fill="#3164f4" rx="12"></rect>
-        <text x="184.5" y="674.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
+    <a href="#mostpopular" id="pricing" style="text-decoration: none;">
+      <g>
+        <rect x="144" y="642" width="135" height="53" fill="#3164f4" rx="12"></rect>
+        <text x="184.5" y="674.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600">
           <tspan>Pricing</tspan>
         </text>
       </g>
-    </a>
+    </a>    
     <g opacity="100%">
       <text x="144" y="585" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Manufacture with no minimal order quanity.</text>
     </g>
@@ -809,16 +809,35 @@
         </svg>
     </div>
     <script>
-      // Add smooth scrolling for all buttons linking to #pricing
-      document.querySelectorAll('a[href="#mostpopular"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault(); // Prevent default link behavior
-          const target = document.querySelector('#mostpopular'); // Select the #mostpopular section
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
+      document.addEventListener("DOMContentLoaded", () => {
+  // Detect mobile browser
+  const mobile = isMobile();
+
+  // Add event listener to buttons with ID 'pricing'
+  const pricingButtons = document.querySelectorAll("#pricing");
+
+  pricingButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      if (mobile) {
+        // Mobile-specific behavior: Redirect to pricing-table.html
+        e.preventDefault();
+        window.location.href = "pricing-table.html";
+      } else {
+        // Desktop-specific behavior: Scroll to #mostpopular section
+        e.preventDefault();
+        const target = document.querySelector("#mostpopular");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+  });
+
+  // Function to detect mobile
+  function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+});
     </script>
 </body>
 </html>
