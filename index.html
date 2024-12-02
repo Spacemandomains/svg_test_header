@@ -53,15 +53,13 @@
       </defs>
     </g>
     <a href="#pricing" style="text-decoration: none;">
-      <g opacity="100%">
+    <g opacity="100%">
         <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="144" y="642" width="135" height="53" fill="#3164f4" rx="12"></rect>
         <text x="184.5" y="674.5" font-family="Inter" font-size="16" fill="#fff" letter-spacing="0" font-weight="600" font-style="normal">
           <tspan>Pricing</tspan>
         </text>
       </g>
     </a>
-    <!-- Anchor Fallback -->
-    <div id="pricing" style="position: relative; top: -50px;"></div>
     <g opacity="100%">
       <text x="144" y="585" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">Manufacture with no minimal order quanity.</text>
     </g>
@@ -478,15 +476,12 @@
       <text x="146" y="2944" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">For individuals and small</text>
       <text x="146" y="2970" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">teams</text>
     </g>
-    <!-- Pricing Section -->
-<svg viewBox="0 0 1000 3000" preserveAspectRatio="xMidYMid meet" width="100%" height="auto">
-  <g id="pricing" opacity="100%">
-    <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="719" y="2736" width="146" height="34" fill="#3164f4" rx="17"></rect>
-    <text x="746.5" y="2758.5" font-family="Inter" font-size="14" fill="#fff" letter-spacing="0" font-weight="700" font-style="normal">
-      <tspan>Most Popular</tspan>
-    </text>
-  </g>
-</svg>
+    <g id="pricing" opacity="100%">
+        <rect filter="url(#filter_dshadow_0_0_0_00000014)" x="719" y="2736" width="146" height="34" fill="#3164f4" rx="17"></rect>
+        <text x="746.5" y="2758.5" font-family="Inter" font-size="14" fill="#fff" letter-spacing="0" font-weight="700" font-style="normal">
+            <tspan>Most Popular</tspan>
+        </text>
+    </g>    
     <g opacity="100%">
       <text x="146" y="3249.5" font-family="Poppins" font-size="32" fill="#030303" letter-spacing="0" font-weight="600" font-style="normal">Compare Features</text>
     </g>
@@ -781,25 +776,20 @@
       <text x="595" y="4045" font-family="Inter" font-size="20" fill="#030303" letter-spacing="0" font-weight="normal" font-style="normal">(California Customers Only)</text>
     </g>
     <defs>
-      <filter id="filter_dshadow_0_0_0_00000014" color-interpolation-filters="sRGB" filterUnits="objectBoundingBox">
-        <!-- Transparent background fix (optional) -->
-        <feFlood flood-opacity="0" result="bg-fix"></feFlood>
-        <!-- Extract the alpha channel from the source graphic -->
-        <feColorMatrix in="SourceAlpha" type="matrix" 
-          values="0 0 0 0 0 
-                  0 0 0 0 0 
-                  0 0 0 0 0 
-                  0 0 0 127 0" result="alpha"></feColorMatrix>
-        <!-- Apply no offset or blur (since dx, dy, and stdDeviation were 0) -->
-        <!-- Adjust alpha for visibility -->
-        <feColorMatrix type="matrix" 
-          values="0 0 0 0 0 
-                  0 0 0 0 0 
-                  0 0 0 0 0 
-                  0 0 0 0.08 0"></feColorMatrix>
-        <!-- Blend source graphic with filtered background -->
-        <feBlend mode="normal" in2="bg-fix" result="bg-fix-filter_dshadow"></feBlend>
-        <feBlend in="SourceGraphic" in2="bg-fix-filter_dshadow" result="shape"></feBlend>
+      <filter id="smallShadow" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feOffset dx="0" dy="0" result="offset"/>
+        <feGaussianBlur in="offset" stdDeviation="1" result="blur"/>
+        <feFlood flood-color="black" flood-opacity="0.1"/>
+        <feComposite in2="blur" operator="in" result="shadow"/>
+        <feBlend in="SourceGraphic" in2="shadow"/>
+      </filter>
+      
+      <filter id="mediumShadow" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feOffset dx="0" dy="4" result="offset"/>
+        <feGaussianBlur in="offset" stdDeviation="12" result="blur"/>
+        <feFlood flood-color="black" flood-opacity="0.1"/>
+        <feComposite in2="blur" operator="in" result="shadow"/>
+        <feBlend in="SourceGraphic" in2="shadow"/>
       </filter>
     </defs>    
     <style id="google">@import url(https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&amp;display=swap);
@@ -809,5 +799,16 @@
       </svg>
         </svg>
     </div>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
 </body>
 </html>
